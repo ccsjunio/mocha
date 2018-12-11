@@ -1,12 +1,11 @@
-
 # 6.0.0-0 / 2018-xx-xx
 
 ## :boom: Breaking Changes
 
-- [#3149]: Drop Node.js v4.x support ([@outsideris])
+- [#3149]: **Drop Node.js v4.x support** ([@outsideris])
 - [#3556]: Changes to command-line options ([@boneskull]):
   - `--grep` and `--fgrep` are now mutually exclusive; attempting to use both will cause Mocha to fail instead of simply ignoring `--grep`
-  - `--compilers` is no longer supported; attempting to use will cause Mocha to fail with a link to more information 
+  - `--compilers` is no longer supported; attempting to use will cause Mocha to fail with a link to more information
   - `-d` is no longer an alias for `--debug`; `-d` is currently ignored
   - [#3275]: `--watch-extensions` no longer implies `js`; it must be explicitly added ([@TheDancingCode])
 - [#2908]: `tap` reporter emits error messages ([@chrmod])
@@ -23,8 +22,9 @@ These are *soft*-deprecated, and will emit a warning upon use.  Support will be 
 - Consumers of the function exported by `bin/options` should now use the `loadMochaOpts` or `loadOptions` (preferred) functions exported by the `lib/cli/options` module
 
 Regarding the `Mocha` class constructor (from `lib/mocha`):
-  - Use property `color: false` instead of `useColors: false`
-  - Use property `timeout: false` instead of `enableTimeouts: false`
+
+- Use property `color: false` instead of `useColors: false`
+- Use property `timeout: false` instead of `enableTimeouts: false`
 
 All of the above deprecations were introduced by [#3556].
 
@@ -38,7 +38,7 @@ Enhancements introduced in [#3556]:
   - `.mocharc.js`, `.mocharc.json`, `.mocharc.yaml` or `.mocharc.yml` are valid "rc" file names and will be automatically loaded
   - Use `--config /path/to/rc/file` to specify an explicit path
   - Use `--package /path/to/package.json` to specify an explicit `package.json` to read the `mocha` prop from
-  - Use `--no-config` or `--no-package` to completely disable loading of configuration via RC file and `package.json`, respectively 
+  - Use `--no-config` or `--no-package` to completely disable loading of configuration via RC file and `package.json`, respectively
   - Configurations are merged as applicable using the priority list:
     1. Command-line arguments
     1. RC file
